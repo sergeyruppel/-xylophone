@@ -1,3 +1,1 @@
-# xylophone
-
-Xylophone - A Simple Musical Instrument App 
+# Xylophone - A Simple Musical Instrument App 
