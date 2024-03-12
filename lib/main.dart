@@ -13,7 +13,9 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         body: SafeArea(
-          child: Container(),
+          child: Center(
+            child: Text(nouns.first),
+          ),
         ),
       ),
     );
