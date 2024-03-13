@@ -1,23 +1,31 @@
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
+// import 'package:audioplayers/audioplayers.dart';
 
-void main() {
-  runApp(const App());
-}
+// void main() {
+//   runApp(const App());
+// }
 
-// class MainApp extends StatelessWidget {
-//   MainApp({super.key});
+// class App extends StatefulWidget {
+//   const App({super.key});
+
+//   @override
+//   State<App> createState() => _AppState();
+// }
+
+// class _AppState extends State<App> {
+//   final player = AudioPlayer();
 
 //   @override
 //   Widget build(BuildContext context) {
-//     return const MaterialApp(
+//     return MaterialApp(
 //       home: Scaffold(
 //         body: SafeArea(
 //           child: Center(
-//             child: ElevatedButton(
+//             child: TextButton(
 //               onPressed: () {
 //                 print('hi');
 //               },
-//               child: Text('PLAY'),
+//               child: const Text('PLAY'),
 //             ),
 //           ),
 //         ),
@@ -26,29 +34,38 @@ void main() {
 //   }
 // }
 
-class App extends StatefulWidget {
-  const App({super.key});
+import 'package:flutter/material.dart';
+import 'package:audioplayers/audioplayers.dart';
 
-  @override
-  State<App> createState() => _AppState();
+void main() {
+  runApp(MyApp());
 }
 
-class _AppState extends State<App> {
+class MyApp extends StatelessWidget {
+  MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: SafeArea(
-          child: Center(
-            child: TextButton(
-              onPressed: () {
-                print('hi');
-              },
-              child: const Text('PLAY'),
-            ),
+        appBar: AppBar(
+          title: const Text('AudioPlayer Example'),
+        ),
+        body: Center(
+          child: ElevatedButton(
+            onPressed: () {
+              playSound();
+            },
+            child: const Text("Play Sound"),
           ),
         ),
       ),
     );
+  }
+
+  AudioPlayer audioPlayer = AudioPlayer();
+
+  Future<void> playSound() async {
+    await audioPlayer.play(AssetSource('assets/note1.wav'));
   }
 }
