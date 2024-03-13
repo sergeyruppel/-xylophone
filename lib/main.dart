@@ -1,20 +1,51 @@
 import 'package:flutter/material.dart';
-import 'package:english_words/english_words.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(const App());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+// class MainApp extends StatelessWidget {
+//   MainApp({super.key});
 
+//   @override
+//   Widget build(BuildContext context) {
+//     return const MaterialApp(
+//       home: Scaffold(
+//         body: SafeArea(
+//           child: Center(
+//             child: ElevatedButton(
+//               onPressed: () {
+//                 print('hi');
+//               },
+//               child: Text('PLAY'),
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+class App extends StatefulWidget {
+  const App({super.key});
+
+  @override
+  State<App> createState() => _AppState();
+}
+
+class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         body: SafeArea(
           child: Center(
-            child: Text(nouns.first),
+            child: TextButton(
+              onPressed: () {
+                print('hi');
+              },
+              child: const Text('PLAY'),
+            ),
           ),
         ),
       ),
