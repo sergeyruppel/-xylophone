@@ -8,6 +8,31 @@ void main() {
 class App extends StatelessWidget {
   const App({super.key});
 
+  // Widget buildKey(Color color, double value) {
+  //   return Expanded(
+  //     child: Padding(
+  //       padding: const EdgeInsets.symmetric(
+  //         horizontal: value,
+  //         vertical: 8.0,
+  //       ),
+  //       child: TextButton(
+  //         style: TextButton.styleFrom(
+  //           backgroundColor: color,
+  //         ),
+  //         onPressed: () {
+  //           playSound(soundNumber: 1);
+  //         },
+  //         child: Container(),
+  //       ),
+  //     ),
+  //   );
+  // }
+
+  void playSound({required int soundNumber}) {
+    final player = AudioPlayer();
+    player.play(AssetSource('note$soundNumber.wav'));
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,80 +42,133 @@ class App extends StatelessWidget {
           title: const Text('Xylophone'),
         ),
         body: SafeArea(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              TextButton(
-                style: TextButton.styleFrom(
-                  backgroundColor: Colors.red,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 24.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                // buildKey(Colors.amber, 20),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 16.0,
+                      vertical: 8.0,
+                    ),
+                    child: TextButton(
+                      style: TextButton.styleFrom(
+                        backgroundColor: Colors.red,
+                      ),
+                      onPressed: () {
+                        playSound(soundNumber: 1);
+                      },
+                      child: Container(),
+                    ),
+                  ),
                 ),
-                onPressed: () {
-                  final player = AudioPlayer();
-                  player.play(AssetSource('note1.wav'));
-                },
-                child: Container(),
-              ),
-              TextButton(
-                style: TextButton.styleFrom(
-                  backgroundColor: Colors.orange,
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 24.0,
+                      vertical: 8.0,
+                    ),
+                    child: TextButton(
+                      style: TextButton.styleFrom(
+                        backgroundColor: Colors.orange,
+                      ),
+                      onPressed: () {
+                        playSound(soundNumber: 2);
+                      },
+                      child: Container(),
+                    ),
+                  ),
                 ),
-                onPressed: () {
-                  final player = AudioPlayer();
-                  player.play(AssetSource('note2.wav'));
-                },
-                child: Container(),
-              ),
-              TextButton(
-                style: TextButton.styleFrom(
-                  backgroundColor: Colors.yellow,
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 32.0,
+                      vertical: 8.0,
+                    ),
+                    child: TextButton(
+                      style: TextButton.styleFrom(
+                        backgroundColor: Colors.yellow,
+                      ),
+                      onPressed: () {
+                        playSound(soundNumber: 3);
+                      },
+                      child: Container(),
+                    ),
+                  ),
                 ),
-                onPressed: () {
-                  final player = AudioPlayer();
-                  player.play(AssetSource('note3.wav'));
-                },
-                child: Container(),
-              ),
-              TextButton(
-                style: TextButton.styleFrom(
-                  backgroundColor: Colors.green,
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 40.0,
+                      vertical: 8.0,
+                    ),
+                    child: TextButton(
+                      style: TextButton.styleFrom(
+                        backgroundColor: Colors.green,
+                      ),
+                      onPressed: () {
+                        playSound(soundNumber: 4);
+                      },
+                      child: Container(),
+                    ),
+                  ),
                 ),
-                onPressed: () {
-                  final player = AudioPlayer();
-                  player.play(AssetSource('note4.wav'));
-                },
-                child: Container(),
-              ),
-              TextButton(
-                style: TextButton.styleFrom(
-                  backgroundColor: Colors.cyan,
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 48.0,
+                      vertical: 8.0,
+                    ),
+                    child: TextButton(
+                      style: TextButton.styleFrom(
+                        backgroundColor: Colors.cyan,
+                      ),
+                      onPressed: () {
+                        playSound(soundNumber: 5);
+                      },
+                      child: Container(),
+                    ),
+                  ),
                 ),
-                onPressed: () {
-                  final player = AudioPlayer();
-                  player.play(AssetSource('note5.wav'));
-                },
-                child: Container(),
-              ),
-              TextButton(
-                style: TextButton.styleFrom(
-                  backgroundColor: Colors.blue,
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 56.0,
+                      vertical: 8.0,
+                    ),
+                    child: TextButton(
+                      style: TextButton.styleFrom(
+                        backgroundColor: Colors.blue,
+                      ),
+                      onPressed: () {
+                        playSound(soundNumber: 6);
+                      },
+                      child: Container(),
+                    ),
+                  ),
                 ),
-                onPressed: () {
-                  final player = AudioPlayer();
-                  player.play(AssetSource('note6.wav'));
-                },
-                child: Container(),
-              ),
-              TextButton(
-                style: TextButton.styleFrom(
-                  backgroundColor: Colors.purple,
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 64.0,
+                      vertical: 8.0,
+                    ),
+                    child: TextButton(
+                      style: TextButton.styleFrom(
+                        backgroundColor: Colors.purple,
+                      ),
+                      onPressed: () {
+                        playSound(soundNumber: 7);
+                      },
+                      child: Container(),
+                    ),
+                  ),
                 ),
-                onPressed: () {
-                  final player = AudioPlayer();
-                  player.play(AssetSource('note7.wav'));
-                },
-                child: Container(),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
